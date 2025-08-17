@@ -48,7 +48,7 @@
                         <form class="form" method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="card-body">
-                                <h4 class="card-title text-center">{{ __('auth.login') }} 3</h4>
+                                <h4 class="card-title text-center">{{ __('auth.login') }}</h4>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
