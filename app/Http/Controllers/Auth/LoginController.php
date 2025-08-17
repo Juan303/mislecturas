@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
+
+    //Palabra clave para decodificar la pass que podria llegar por GET
+    public $clave = '1234567890abcdef';
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -25,6 +28,13 @@ class LoginController extends Controller
         if(auth()->user()){
             return view('welcome');
         }
+        if (request()->has('email') && request()->has('password')) {
+            $credentials = request(['email', 'password']);
+            if (auth()->attempt($credentials)) {
+                return redirect()->intended($this->redirectTo());
+            }
+        }
+        //dd('No se ha podido autenticar el usuario. Por favor, compruebe sus credenciales.');
         return view('auth.login');
         /*$business_areas = BusinessArea::active(true)->orderBy('weight')->get();
         $family_products = FamilyProduct::active(true)->orderBy('weight')->get();
@@ -38,17 +48,19 @@ class LoginController extends Controller
         return Session::get('backUrl') ? Session::get('backUrl') :   $this->redirectTo;
     }
 
-
-
-
-    use AuthenticatesUsers;
-
-    //Reescribimos la funcion que hace el login de tal manera que pueden llegar por GET el mail y el pass para que se haga login automatico
-    //Habria que hacer el login con el email y la contraseña que se envian por GET
-    public function login()
+    //Reescribimos la funcion que muestra la pagina de login de tal manera que pueden llegar por GET el mail y el pass para que se haga login automatico
+    public function showLoginForm()
     {
-        if (request()->has('email') && request()->has('password')) {
-            $credentials = request(['email', 'password']);
+        if (request()->has('hash')) {
+            // La pass llega encriptada, por lo que la desencriptamos (AES-256-CBC) y la clave es '1234567890abcdef'
+            $getData = base64_decode(request('hash'));
+            $email = explode('=',explode('&', $getData)[0])[1]; // Obtenemos el email
+            $password = explode('=',explode('&', $getData)[1])[1]; // Obtenemos la contraseña
+
+            $credentials = [
+                'email' => $email, // Obtenemos el email de la URL,
+                'password' => $password // Obtenemos la contraseña de la URL
+            ];
             if (auth()->attempt($credentials)) {
                 return redirect()->intended($this->redirectTo());
             }
@@ -56,6 +68,8 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
+
+    use AuthenticatesUsers;
 
 
     /**
