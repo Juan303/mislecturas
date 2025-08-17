@@ -87,9 +87,8 @@ class ScrapperController extends Controller
             fwrite($fp,"- Colecciones actualizadas: ".$n_colecciones_actualizadas."\r\n");
             fwrite($fp,"- Colecciones nuevas: ".$n_colecciones_nuevas."\r\n");
 
+
             session()->flash('message', ['type' => 'success', 'text' => 'Proceso de extracción de datos finalizado correctamente.']);
-            ColeccionHelper::actualizarPaginasNoEditados();
-            ColeccionHelper::actualizarLecturasMangasLeidos();
         }
         catch (\Exception $e){
             session()->flash('message', ['type' => 'warning', 'text' => $e->getMessage()]);
@@ -99,6 +98,8 @@ class ScrapperController extends Controller
         fwrite($fp, "\r\nTIEMPO TOTAL DE PROCESO: ".round($tiempoTotal, 0)." segundos (".round($tiempoTotal/60, 2) ." minutos)\r\n");
         fwrite($fp, date('d/m/Y H:i:s')."======================================================FIN PROCESO DE EXTRACCIÓN DE DATOS\r\n");
         fclose($fp);
+        ColeccionHelper::actualizarPaginasNoEditados();
+        ColeccionHelper::actualizarLecturasMangasLeidos();
        //volvemos a la página anterior
         if($ncolecciones != null){
             return redirect('colecciones/coleccion/'.$ncolecciones);

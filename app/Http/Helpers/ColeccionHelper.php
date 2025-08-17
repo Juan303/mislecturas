@@ -460,11 +460,9 @@ class ColeccionHelper{
     //Funcion para actualizar el numero de paginas de los comics no editados. Estos deben tener un numero de paginas igual a la media de los comics editas de la coleccion
     public static function actualizarPaginasNoEditados(){
         //cogemos solo colecciones que esten en las tablas de usuario_colecciones
-        $colecciones = Coleccion::whereIn('id', function($query){
-            $query->select('coleccion_id')
-                ->from('usuario_colecciones');
-        })->get();
+        $colecciones = Coleccion::all();
         foreach($colecciones as $coleccion){
+
             $comicsEditados = Comic::where('coleccion_id', '=', $coleccion->id)
                 ->where('tipo', '=', 'editado')
                 ->get();
