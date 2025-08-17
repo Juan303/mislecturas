@@ -20,3 +20,4 @@ Homestead.json
 .idea/
 
 storage/framework/views/
+/public/default.php

@@ -109,6 +109,8 @@ class LibroController extends Controller
                 Storage::disk('public')->put($path.'/'.$fileName.".jpg", $image);
                 $libro->imagen = '/storage/'.$path.'/'.$fileName.".jpg";
                 $libro->save();
+                //Borramos la imagen temporal
+                Storage::delete('img/'.$fileName.'.jpg');
             }
 
 
