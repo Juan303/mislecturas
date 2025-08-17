@@ -1,0 +1,353 @@
+/*=========================FONDO ABAJO================*/
+
+html {
+    //min-height: 100%;
+    position: relative;
+    background-color: white;
+}
+body {
+    margin: 0;
+}
+.loader {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: black;
+    //background: url('images/pageLoader.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity:.7;
+}
+.loader .modal-content{
+    opacity: 1;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    color: white;
+}
+.wrapper {
+    //padding-top: 58px;
+    //padding-bottom: 145px;
+}
+.login-page .page-header > .container {
+    //padding-bottom: 120px;
+    //padding-top:100px;
+}
+
+
+/*======================FONDO WRAPPER==========*/
+body{
+    background-color: #4b4b4b;
+}
+
+.navbar .dropdown.show .dropdown-menu, .navbar .dropdown .dropdown-menu {
+    height: auto;
+}
+
+
+.main-section{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -10px;
+    margin-bottom: -18px;
+    border-radius: 6px;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.main-section.last{
+    margin-bottom: 0;
+}
+/*==============================BOTONES BARRA DE NAVEGACION*/
+.navbar .navbar-brand {
+    height: auto;
+}
+.dropdown-menu .dropdown-item:hover, .dropdown-menu .dropdown-item:focus, .dropdown-menu a:hover, .dropdown-menu a:focus, .dropdown-menu a:active {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+    background-color: #12aee1;
+    color: #FFFFFF;
+}
+
+.nav-link{
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+}
+.navbar .navbar-nav .nav-item.active .nav-link:not(.btn), .navbar .navbar-nav .nav-item .nav-link:not(.btn):focus, .navbar .navbar-nav .nav-item .nav-link:not(.btn):hover, .navbar .navbar-nav .nav-item .nav-link:not(.btn):active {
+    border-color: rgb(200, 200, 200);
+    border-radius: 0.1875rem;
+}
+
+.nav-link.active{
+    background-color: rgb(18, 174, 225);
+    color: white !important;
+}
+
+
+.img-fade {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.img-fade img {
+    transition: 0.3s ease-in-out;
+}
+
+.img-fade:hover img{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#mobile-nav ul li a{
+    color:white;
+}
+
+/*===============Ajuste de formulario login=========*/
+.card-login .form {
+    min-height: 350px;
+}
+
+/*======================================================================Cabecera noticias*/
+#noticias .card .card-header {
+    margin-top: -13px;
+}
+
+
+/*==============================================COLORES card header==========*/
+.card .card-header-primary, .card.bg-primary, .card.card-rotate.bg-primary .front, .card.card-rotate.bg-primary .back {
+    background: linear-gradient(60deg, #414447, #12aee1);
+}
+.card .card-header-primary .card-icon, .card .card-header-primary .card-text, .card .card-header-primary:not(.card-header-icon):not(.card-header-text), .card.bg-primary, .card.card-rotate.bg-primary .front, .card.card-rotate.bg-primary .back {
+    background: linear-gradient(60deg, #414447, #12aee1);
+}
+/*===================================botones====*/
+.btn.btn-vzero {
+    color: #fff;
+    background-color: #12aee1;
+    border-color: #12aee1;
+    box-shadow: 0 2px 2px 0 rgba(0, 188, 212, 0.14), 0 3px 1px -2px rgba(0, 188, 212, 0.2), 0 1px 5px 0 rgba(0, 188, 212, 0.12);
+}
+/*===========================Alinear logo====*/
+.navbar .navbar-brand {
+    height: auto;
+}
+
+/*===========================RADIOBUTTONS CON IMAGENES LISTAS====*/
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+.cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+    -moz-filter: none;
+    filter: none;
+    border: 3px solid red;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:70px;height:70px;
+    -webkit-transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.1) grayscale(1) opacity(.9);
+    -moz-filter: brightness(1.1) grayscale(1) opacity(.9);
+    filter: brightness(1.1) grayscale(1) opacity(.9);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.05) grayscale(.5) opacity(.9);
+    -moz-filter: brightness(1.05) grayscale(.5) opacity(.9);
+    filter: brightness(1.05) grayscale(.5) opacity(.9);
+}
+
+/*===========================RADIOBUTTONS CON IMAGENES LISTAS====*/
+.juego-image-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+.juego-image-selector input:active +.drinkcard-juego-image{opacity: .9;}
+.juego-image-selector input:checked +.drinkcard-juego-image, .juego-image-selector input:checked +.drinkcard-juego-image img{
+    -webkit-filter: none;
+    -moz-filter: none;
+    filter: none;
+}
+.drinkcard-juego-image{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    //width:70px;
+    height:150px;
+    -webkit-transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.1) grayscale(1) opacity(.9);
+    -moz-filter: brightness(1.1) grayscale(1) opacity(.9);
+    filter: brightness(1.1) grayscale(1) opacity(.9);
+    margin-right:5px;
+}
+.drinkcard-juego-image:hover{
+    -webkit-filter: brightness(1.05) grayscale(.5) opacity(.9);
+    -moz-filter: brightness(1.05) grayscale(.5) opacity(.9);
+    filter: brightness(1.05) grayscale(.5) opacity(.9);
+}
+/*EDITAR JUEGO*/
+.imagen-editar-juego{
+    position: relative;
+    width: 10%;
+}
+
+/* Extras */
+/*a:visited{color:#888}*/
+/*a{color:#444;text-decoration:none;}*/
+/*p{margin-bottom:.3em;}*/
+
+
+/*===========================CARDS====*/
+.btn.btn-link{
+    white-space: normal !important;
+}
+.card{
+    border-radius:0;
+    //background-color: #f6f0f6;
+}
+.h-80{
+    height: 80%;
+}
+.h-85{
+    height: 85%;
+}
+.h-90{
+    height: 90%;
+}
+.h-95{
+    height: 95%;
+}
+.w-30{
+    width: 30%;
+}
+.w-65{
+    width: 65%;
+}
+.text-gris{
+    color: #818181;
+}
+.numero-coleccion{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/*===========================Fondos====*/
+/*==============verdes*/
+.bg-verde{
+    background-color: #4CAF50;
+}
+.bg-verde-claro{
+    background-color: #8bc34a;
+}
+.bg-verde-oscuro{
+    background-color: #388e3c;
+}
+/*==============azules*/
+.bg-azul{
+    background-color: #1875b2;
+}
+.bg-azul-claro{
+    background-color: #2196f3;
+}
+.bg-azul-oscuro{
+    background-color: #0d47a1;
+}
+/*==============crema*/
+.bg-crema{
+    background-color: #f5f5f5;
+}
+.bg-crema-claro{
+    background-color: #f9f9f9;
+}
+.bg-crema-oscuro{
+    background-color: #e0e0e0;
+}
+
+/*========================PAGINACION*/
+.pagination > .page-item > .page-link{
+    background: #cacaca26!important;
+    border-radius: unset!important;
+}
+.pagination > .page-item.active > .page-link{
+    background-color: #51b1df !important;
+}
+
+/*========================LABELS*/
+#formLibro textarea{
+    height: unset !important;
+}
+
+/*========================TABLAS*/
+.table th, .table td {
+    padding: 0.03rem;
+    padding-left: 0.5rem;
+    font-size: 0.8rem;
+}
+
+#tablaRegistrosLectura th .th-inner, #tablaRegistrosLectura td{
+    padding: 0.1rem 0.3rem;
+    font-size: 0.8rem;
+}
+.modal .nav-tabs{
+    padding:0 !important;
+}
+.modal .nav-tabs .nav-item .nav-link{
+    margin-right: 5px !important;
+    background-color: #f8f9fa !important;
+    color: #495057 !important;
+}
+.modal .nav-tabs .nav-item .nav-link.active{
+    background-color: #3870ab !important;
+    color: white !important;
+}
+.modal .nav-tabs .nav-item .nav-link,
+.modal .nav-tabs .nav-item .nav-link.active {
+    /* bordes por arriba e izquierda y derecha */
+    border-width: 1px 1px 1px 1px !important;
+    border-color: #171717 !important;
+    border-style: solid !important;
+    /* bordes redondos solo arriba */
+    border-radius: 0.25rem !important;
+}
+
+.modal .modal-dialog{
+    margin-top:2rem !important;
+}
+
+/* HTML: <div class="loader"></div> */
+.widgetLoader {
+    width: 45px;
+    aspect-ratio: 1;
+    --c: no-repeat linear-gradient(#5d5d5d 0 0);
+    background:
+        var(--c) 0%   50%,
+        var(--c) 50%  50%,
+        var(--c) 100% 50%;
+    background-size: 20% 100%;
+    animation: l1 1s infinite linear;
+}
+@keyframes l1 {
+    0%  {background-size: 20% 100%,20% 100%,20% 100%}
+    33% {background-size: 20% 10% ,20% 100%,20% 100%}
+    50% {background-size: 20% 100%,20% 10% ,20% 100%}
+    66% {background-size: 20% 100%,20% 100%,20% 10% }
+    100%{background-size: 20% 100%,20% 100%,20% 100%}
+}
+
